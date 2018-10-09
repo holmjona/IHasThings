@@ -20,6 +20,26 @@ namespace IHasThingies {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+
+            SuperHero h = new SuperHero("Super","Man");
+            Citizen c = new Citizen("Clark","Kent");
+            SuperHero b = new SuperHero("Bat", "Man");
+
+            h.Alias = c;
+            c.SecretIdentity = h;
+
+            c.FirstName = "Bob";
+            c.SecretIdentity.Alias.FirstName = "Sam";
+
+
+
+            MessageBox.Show(h.FullName); // Super Man
+            MessageBox.Show(c.FullName); // Clark Kent
+            MessageBox.Show(h.Alias.FullName); // Clark Kent
+            MessageBox.Show(h.Alias.SecretIdentity.Alias.FullName); // Clark Kent
+
+
+
         }
     }
 }
