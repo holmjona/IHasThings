@@ -8,6 +8,19 @@ namespace IHasThingies {
     class Jet : IFlyable {
         private Person[] _Passengers;
 
+        private Wing _RightWing = new Wing() { Length = 10 };
+        private Wing _LeftWing = new Wing() { Length = 10 };
+
+        public Wing RightWing {
+            get { return _RightWing; }
+            set { _RightWing = value; }
+        }
+        public Wing LeftWing {
+            get { return _LeftWing; }
+            set { _LeftWing = value; }
+        }
+
+
         public Person[] Passengers {
             get { return _Passengers; }
             set { _Passengers = value; }
